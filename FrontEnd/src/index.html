@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="triviaApp">
+<head>
+	<title>App Main Page</title>
+</head>
+<body>
+  <div> Awesome ! </div>
+  <div ui-view="user.info"> xxx </div>  
+  <a ui-sref="home"> click </a>
+
+<script src="angular/angular.js"></script>
+<script src="angular-ui-router/release/angular-ui-router.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/route.config.js"></script>
+
+<! -- Home -->
+<script src="app/home/home.controller.js"></script>
+<script src="app/home/home.factory.js"></script>
+
+</body>
+</html>

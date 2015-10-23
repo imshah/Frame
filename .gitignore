@@ -1,0 +1,10 @@
+.gitignore
+bin
+obj
+Frame.sln
+Web.Debug.config
+Web.Release.config
+FrontEnd/node_modules
+Frame.csproj.user
+Frame.v11.suo
+packages
