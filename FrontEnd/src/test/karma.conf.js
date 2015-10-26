@@ -12,17 +12,18 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: [
         'mocha', 
-        'chai'
+        'browserify'
     ],
 
     plugins : [
-        'karma-phantomjs-launcher',
+        'karma-phantomjs-launcher'
+        ,'karma-mocha'
+        ,'karma-browserify'
     ],
     // list of files / patterns to load in the browser
     files: [
       '../../node_modules/angular/angular.js',
       '../../node_modules/angular-ui-router/release/angular-ui-router.js',
-      // '../../node_modules/chai/chai.js',
       '../app/app.js',
       '../app/home/**/*.js'
     ],
@@ -36,6 +37,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        '../app/home/*.spec.js': ['browserify']
     },
 
 

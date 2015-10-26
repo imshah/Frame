@@ -1,6 +1,6 @@
 'use strict';
 
-//var expect = require('chai').expect;
+var expect = require('chai').expect;
 // var x = require('angular-mocks');
 (function(){
 	describe("@dev", function(){
