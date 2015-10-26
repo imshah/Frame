@@ -1,0 +1,5 @@
+app/home/*.spec.js
+--timeout 5000
+--grep @dev 
+-R spec
+-c   --forcing color

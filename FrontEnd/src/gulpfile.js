@@ -4,6 +4,7 @@ var browserSync = require('browser-sync').create();
 
 var files = [
 	"gulpfile.js",
+	"karma.conf.js",
 	"src/**/*.js",
 	"src/**/*.html"
 ];
@@ -24,6 +25,27 @@ gulp.task('serve', function(){
 	files.forEach(function(item, index){
 		gulp.watch(item).on("change", browserSync.reload);
 	});
+});
+
+
+var Server = require('karma').Server;
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
+/**
+ * Watch for file changes and re-run tests on each change
+ */
+gulp.task('tdd', function (done) {
+  new Server({
+    configFile: __dirname + '/test/karma.conf.js'
+  }, done).start();
 });
 
 gulp.task('default', ['serve']);
