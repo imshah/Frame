@@ -3,18 +3,22 @@
 <head>
 	<title>App Main Page</title>
 </head>
-<body>
-  <div> Awesome ! </div>
-  <div ui-view="user.info"> xxx </div>  
-  <a ui-sref="home"> click </a>
+<body ng-controlller="AppController">
+  
+  <div ui-view="topNav"></div>
 
 <script src="angular/angular.js"></script>
 <script src="angular-ui-router/release/angular-ui-router.js"></script>
+<script src="angular-ui-router/release/angular-ui-router.js"></script>
+<script src="jquery/dist/jquery.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script src="app/app.js"></script>
+<script src="app/app.controller.js"></script>
 <script src="app/route.config.js"></script>
 
-<! -- Home -->
+<!-- Home -->
 <script src="app/home/home.controller.js"></script>
 <script src="app/home/home.factory.js"></script>
 
