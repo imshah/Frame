@@ -1,20 +1,19 @@
 app.directive("home", HomeDirective);
 
-HomeDirective.$inject = [];
+HomeDirective.$inject = ['HomeFactory'];
 
-function HomeDirective(){
+function HomeDirective(HomeFactory){
 	return {
 		restrict: "E",
-		templateUrl: "app/home/home.tpl.html"
-		// scope:{
-  //         activeTab: '='
-		// },
-		// compile: function(elem, attr){
-		// 	return{
-		// 		pre: function(scope, elem, attr){
-		// 			scope.isActive = scope.activeTab.name === "home" ? true : false;					
-		// 		}
-		// 	}
-		// }
+		templateUrl: "app/home/home.tpl.html",
+		link: function(scope, elem, attrs){
+			scope.users = [];
+			var promise = HomeFactory.getAllUsers();
+			promise.then(function resolve(users){
+				scope.users = users.data;
+			},function reject(err){
+				console.log('error:', err);
+			})
+		}
 	}
 }

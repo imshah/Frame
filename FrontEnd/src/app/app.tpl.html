@@ -1,28 +1,4 @@
 <div>
-	<!-- <ul class="nav nav-pills">
-	  <li ng-repeat="tab in vm.tabs">
-		  <a data-toggle="pill" href="#{{tab.name}}">{{tab.name|uppercase}}</a>
-	  </li>		 
-	</ul>
-
-	<app-directive></app-directive>
-
-	<div class="tab-content">
-	  
-	  <div>
-	  	 <home active-tab="vm.getActiveTab()"> </home> 
-	  </div>
-	  
-
-	  <div>		 	    
-	    <stats active-tab="vm.getActiveTab()"> </stats>
-	  </div>
-
-	  <div>
-	    <newsfeed active-tab="vm.getActiveTab()"> </newsfeed>
-	  </div>
-	  
-	</div>	 -->
 
   <uib-tabset type="pills">
     
@@ -30,7 +6,7 @@
       <home></home>
     </uib-tab>
 
-    <uib-tab heading="Statistics">
+    <uib-tab heading="Statistics" >
       <stats></stats>
     </uib-tab>
 
@@ -39,7 +15,5 @@
     </uib-tab>
 
   </uib-tabset>
-
-
 
 </div>	
