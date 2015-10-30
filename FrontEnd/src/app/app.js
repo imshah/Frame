@@ -1,1 +1,5 @@
-var app = angular.module("triviaApp", ['ui.router', 'ui.bootstrap']);
+var app = angular.module("triviaApp", [
+		'ui.router', 
+		'ui.bootstrap',
+		'ngAnimate'
+	]);
