@@ -1,1 +1,1 @@
-var app = angular.module("triviaApp", ['ui.router']);
+var app = angular.module("triviaApp", ['ui.router', 'ui.bootstrap']);

@@ -6,14 +6,6 @@ function routeConfig($stateProvider, $urlRouterProvider){
    $stateProvider
     .state('app', {
       url: "/app",
-      resolve: {
-        topNav: function(){
-          var tabs = ["Home", "Stats", "NewsFeed"];
-          return { 
-            tabs: tabs
-          }
-        }
-      },
       views: {
         "topNav": {
           templateUrl: "app/app.tpl.html",
@@ -22,15 +14,16 @@ function routeConfig($stateProvider, $urlRouterProvider){
       }
     })
    	.state('home', {
+      url:"/home",
       resolve: {
-        user: function(HomeFactory){
+        user: function(HomeFactory){          
           return {
             list: HomeFactory.getAllUsers()
           }
         }
       },
    		views:{
-   			"user.info": {          
+   			"user": {          
    				templateUrl: "app/home/home.tpl.html",
    				controller: "HomeController as vm"
    			}

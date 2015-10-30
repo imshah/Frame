@@ -1,19 +1,45 @@
 <div>
-	<ul class="nav nav-pills">
+	<!-- <ul class="nav nav-pills">
 	  <li ng-repeat="tab in vm.tabs">
-	  	 <a data-toggle="pill" href="#{{tab}}">{{tab}}</a>
-	  </li>
+		  <a data-toggle="pill" href="#{{tab.name}}">{{tab.name|uppercase}}</a>
+	  </li>		 
 	</ul>
 
+	<app-directive></app-directive>
+
 	<div class="tab-content">
-	  <div id="Home" class="tab-pane fade in active">		    
-	    <p>home tab</p>
+	  
+	  <div>
+	  	 <home active-tab="vm.getActiveTab()"> </home> 
 	  </div>
-	  <div id="Stats" class="tab-pane fade">		  
-	    <p>stats tab</p>
+	  
+
+	  <div>		 	    
+	    <stats active-tab="vm.getActiveTab()"> </stats>
 	  </div>
-	  <div id="NewsFeed" class="tab-pane fade">		    
-	    <p>newsfeed tab</p>
+
+	  <div>
+	    <newsfeed active-tab="vm.getActiveTab()"> </newsfeed>
 	  </div>
-	</div>	
+	  
+	</div>	 -->
+
+  <uib-tabset type="pills">
+    
+    <uib-tab heading="Home">
+      <home></home>
+    </uib-tab>
+
+    <uib-tab heading="Statistics">
+      <stats></stats>
+    </uib-tab>
+
+    <uib-tab heading="News Feed">
+      <newsfeed></newsfeed>
+    </uib-tab>
+
+  </uib-tabset>
+
+
+
 </div>	

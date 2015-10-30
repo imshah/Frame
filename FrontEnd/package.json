@@ -9,7 +9,7 @@
   "author": "ishah",
   "license": "ISC",
   "devDependencies": {
-    "angular-mocks": "^1.4.7",
+    "angular-mocks": "^1.4.7",    
     "browser-sync": "^2.9.11",
     "chai": "^3.4.0",
     "gulp": "^3.9.0",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "angular": "^1.4.7",
-    "angular-ui-router": "^0.2.15",
-    "jquery": "^2.1.4"
+    "angular-ui-bootstrap": "^0.14.3",
+    "angular-ui-router": "^0.2.15"
   }
 }
