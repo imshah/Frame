@@ -30,6 +30,14 @@ namespace Frame.Controllers
             return Ok(users);
         }
 
+        // GET userdata/5  
+        [Route("getall/{id}")]
+        public IHttpActionResult GetAll(int? id)
+        {
+            var users = userService.GetAllUser(id);
+            return Ok(users);
+        }
+
         // GET userdata/5
         [Route("{id}")]        
         public IHttpActionResult Get(string id)

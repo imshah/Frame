@@ -9,6 +9,7 @@ namespace Frame.Service.Abstract
     public interface IUserDataService
     {
         IList<Frame.Models.User> GetAllUser();
+        Task<String> GetAllUser(int? id);
         Frame.Models.User GetUserById(string id);
     }
 }

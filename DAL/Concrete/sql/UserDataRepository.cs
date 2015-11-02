@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using Frame.Models;
 using Frame.DAL.Abstract;
+using System.Threading.Tasks;
 
-namespace Frame.DAL.Concrete
+namespace Frame.DAL.Concrete.sql
 {
     public class UserDataRepository: IUserDataRepository
     {
@@ -51,6 +52,14 @@ namespace Frame.DAL.Concrete
             });
 
             return users;
+        }
+
+        public Task<String> GetAllUser(int? id)
+        {
+            var str = Task<string>.Factory.StartNew(() => {
+                return id.ToString();
+            });
+            return str;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using Frame.Models;
 using Frame.DAL.Abstract;
 using Frame.Service.Abstract;
+using System.Threading.Tasks;
 
 namespace Frame.Service.Concrete
 {
@@ -25,6 +26,10 @@ namespace Frame.Service.Concrete
         public IList<User> GetAllUser()
         {
             return userRepo.GetAllUser();
+        }
+        public Task<String> GetAllUser(int? id)
+        {
+            return userRepo.GetAllUser(id);
         }
     }
 }
