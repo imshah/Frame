@@ -1,4 +1,4 @@
-app.directive('appDirective', appDirective);
+/*app.directive('appDirective', appDirective);
 
 function appDirective(){
 	return {
@@ -17,4 +17,4 @@ function appDirective(){
 
 		}
 	}
-}
+}*/

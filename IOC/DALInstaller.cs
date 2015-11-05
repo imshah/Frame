@@ -9,7 +9,7 @@ namespace Frame.IOC
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Classes.FromThisAssembly()
-                            .InNamespace("Frame.DAL.Concrete.mongodb", true)
+                            .InNamespace("Frame.DAL.Concrete.sql", true)
                             .WithService.DefaultInterfaces()
                             .LifestyleSingleton());
         }

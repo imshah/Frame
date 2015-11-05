@@ -16,9 +16,14 @@ function routeConfig($stateProvider, $urlRouterProvider){
    	.state('home', {
       url:"/home",
       resolve: {
-        user: function(HomeFactory){          
+        // user: function(HomeFactory){          
+        //   return {
+        //     list: HomeFactory.getAllUsers()
+        //   }
+        // },
+        quiz: function(HomeFactory){
           return {
-            list: HomeFactory.getAllUsers()
+            list: HomeFactory.getQuestions()
           }
         }
       },

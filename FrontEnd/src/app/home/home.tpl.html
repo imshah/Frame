@@ -1,8 +1,28 @@
 
-<div ng-repeat="user in users">
+<!-- <div ng-repeat="user in users">
 	<span>
 		Name: <strong> {{user.userName}} </strong> 
 		<br/>
 		Came From: {{user.address}}
 	</span>
-</div>	
+</div>	 -->
+
+<div>	
+	<form name="question">
+	   <h1> {{vm.currentQuiz.question}}</h1>
+	   <div ng-repeat = "answer in vm.currentQuiz.answers"> 
+	   	 <!-- ng-from is required if the name property is used for validation -->
+	     <ng-form name="options">
+	      <!-- $parent is required because ng-repeat creates its own scope which needs to passed to the parent-->
+	      <input type="radio" ng-model="$parent.user.answer" value={{answer.statement}}>
+	   			{{answer.statement}}
+	     </ng-form>
+	    	      
+	   </div>
+	   <!-- <ng-form	name="options">
+	   	<input type="text" ng-model="user.text">
+	   </ng-form> -->
+	   
+	   <button class="btn btn-primary" ng-click="vm.next(user)" > Next </button>	   
+	</form>
+</div>

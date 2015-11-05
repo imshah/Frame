@@ -5,9 +5,8 @@ using System.Web;
 
 namespace Frame.Models
 {
-    public class Types
+    public class Answer
     {
-        public string Name { get; set; }
-        public string CategoryId { get; set; }
+        public string Statement { get; set; }
     }
 }

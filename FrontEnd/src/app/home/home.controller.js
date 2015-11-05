@@ -1,17 +1,25 @@
-app.controller('HomeController', homeController);
+app.controller('HomeController', HomeController);
 
-homeController.$inject= ['user'];
+HomeController.$inject= ['quiz'];
 
-function homeController(user){
+function HomeController(quiz){
 	var vm = this;
 	vm.tabs = ["Home", "Stats", "NewsFeed"];
+	vm.name="Home";
 	
-	var promise = user.list;
+	vm.count = 0;
+
+	var promise = quiz.list;
 	promise.then(function success(list){		
-		vm.users = list.data;
-		console.log(vm.users);
-	}, function failure(data){
-		console.log('err:', data);
-	})
-	
+		vm.quiz = list.data;		
+	}, function failure(errData){
+		console.log('err:', errData);
+	});
+
+	vm.getNextQuestion= function(){
+		vm.currentQuiz = vm.quiz[count];
+		count++;
+		return vm.currentQuiz;
+	}
+
 }
