@@ -10,24 +10,25 @@ function HomeDirective(HomeFactory){
 		controllerAs: "vm",
 		controller: function(){
 			var vm = this;
+			vm.currentQuiz = null;
+			vm.userScore = 0;
 			vm.count = 0;
 
 			var promise = HomeFactory.getQuestions();
-			promise.then(function success(list){		
-				vm.quiz = list.data;		
+			promise.then(function (quizes){		
+				vm.quiz = quizes;		
 				vm.currentQuiz = vm.getNextQuestion();
-			}, function failure(errData){
-				console.log('err:', errData);
 			});
 
-			vm.getNextQuestion= function(){
-				return vm.quiz[vm.count++];
+			vm.getNextQuestion= function(givenAnswer){
+				//console.log(givenAnswer);
+				if( givenAnswer && 
+					HomeFactory.isAnswerValid(givenAnswer.answer, vm.currentQuiz.correctAnswer)){
+					vm.userScore = HomeFactory.increaseScore(vm.userScore, 1);
+				}				
+				return vm.currentQuiz = vm.quiz[vm.count++];
+
 			};
-
-			vm.next = function(user){
-				console.log(user);
-
-			}
 		},
 		link: function(scope, elem, attrs){
 		}

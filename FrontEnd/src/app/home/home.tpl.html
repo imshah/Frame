@@ -6,23 +6,20 @@
 		Came From: {{user.address}}
 	</span>
 </div>	 -->
-
+{{vm.currentQuiz}}
 <div>	
 	<form name="question">
-	   <h1> {{vm.currentQuiz.question}}</h1>
+	   <h1> {{vm.currentQuiz.question}}  [score:{{vm.userScore}}]</h1>
 	   <div ng-repeat = "answer in vm.currentQuiz.answers"> 
-	   	 <!-- ng-from is required if the name property is used for validation -->
+	   	 <!-- ng-from is required if the name property is used for validation e.g  question.$valid-->
 	     <ng-form name="options">
 	      <!-- $parent is required because ng-repeat creates its own scope which needs to passed to the parent-->
-	      <input type="radio" ng-model="$parent.user.answer" value={{answer.statement}}>
+	      <input type="radio" name="option" ng-model="$parent.user.answer" value={{answer.statement}}>
 	   			{{answer.statement}}
 	     </ng-form>
 	    	      
 	   </div>
-	   <!-- <ng-form	name="options">
-	   	<input type="text" ng-model="user.text">
-	   </ng-form> -->
 	   
-	   <button class="btn btn-primary" ng-click="vm.next(user)" > Next </button>	   
+	   <button  ng-disabled="!question.$dirty" class="btn btn-primary" ng-click="vm.getNextQuestion(user)" > Next </button>	   
 	</form>
 </div>
